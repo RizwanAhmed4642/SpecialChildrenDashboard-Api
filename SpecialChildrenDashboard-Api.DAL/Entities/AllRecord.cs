@@ -18,6 +18,8 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string PatientRegistrations_Age { get; set; }
         public string DistrictName { get; set; }
         public string TehsilName { get; set; }
+        public string LocationId { get; set; }
+        public string SchoolId { get; set; }
         public string PatientRegistrations_Gender { get; set; }
         public string PatientRegistrations_Address { get; set; }
         public string PatientRegistrations_NameOfInstitute { get; set; }

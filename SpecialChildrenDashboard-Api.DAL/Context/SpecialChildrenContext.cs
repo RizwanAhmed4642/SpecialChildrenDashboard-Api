@@ -28,6 +28,8 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<Cadre> Cadres { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<DashboardCounter> DashboardCounters { get; set; }
+        public virtual DbSet<DashboardDetailCount> DashboardDetailCounts { get; set; }
         public virtual DbSet<DentalTransaction> DentalTransactions { get; set; }
         public virtual DbSet<DermatologistDoc4> DermatologistDoc4s { get; set; }
         public virtual DbSet<Designation> Designations { get; set; }
@@ -56,6 +58,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
         public virtual DbSet<View_Lahore_chauburji_10_March_18_Screenings_SC> View_Lahore_chauburji_10_March_18_Screenings_SCs { get; set; }
         public virtual DbSet<View_MoreThan_18_March_18_Screenings_SC> View_MoreThan_18_March_18_Screenings_SCs { get; set; }
         public virtual DbSet<View_SpecialChild_TehsilUserList> View_SpecialChild_TehsilUserLists { get; set; }
+        public virtual DbSet<View_StudentRegistration> View_StudentRegistrations { get; set; }
         public virtual DbSet<View_sheikhupura_10_March_18_Screenings_SC> View_sheikhupura_10_March_18_Screenings_SCs { get; set; }
         public virtual DbSet<WebSetting> WebSettings { get; set; }
         public virtual DbSet<__MigrationHistory> __MigrationHistories { get; set; }
@@ -233,6 +236,20 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
                 entity.Property(e => e.Name).HasMaxLength(200);
 
                 entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<DashboardCounter>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("DashboardCounter");
+            });
+
+            modelBuilder.Entity<DashboardDetailCount>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("DashboardDetailCount");
             });
 
             modelBuilder.Entity<DentalTransaction>(entity =>
@@ -838,6 +855,17 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
                 entity.Property(e => e.UserName)
                     .IsRequired()
                     .HasMaxLength(256);
+            });
+
+            modelBuilder.Entity<View_StudentRegistration>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("View_StudentRegistration");
+
+                entity.Property(e => e.Regdate).HasColumnType("datetime");
+
+                entity.Property(e => e.UniqueId).HasMaxLength(500);
             });
 
             modelBuilder.Entity<View_sheikhupura_10_March_18_Screenings_SC>(entity =>
