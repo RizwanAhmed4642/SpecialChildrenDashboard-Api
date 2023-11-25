@@ -25,5 +25,6 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public DateTime? UpdatedOn { get; set; }
         public string DeletedBy { get; set; }
         public DateTime? DeletedOn { get; set; }
+        public int ScreeningTypeId { get; set; }
     }
 }

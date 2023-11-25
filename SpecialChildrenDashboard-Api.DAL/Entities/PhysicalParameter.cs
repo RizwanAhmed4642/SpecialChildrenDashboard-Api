@@ -61,6 +61,8 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string Club { get; set; }
         public string Tetany { get; set; }
         public string Bowed { get; set; }
+        public string Prosthetics { get; set; }
+        public int ScreeningTypeId { get; set; }
 
         public virtual PatientRegistration PatientRegistration { get; set; }
     }

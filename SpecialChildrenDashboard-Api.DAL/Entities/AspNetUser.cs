@@ -44,6 +44,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string TempClinicEvent { get; set; }
         public long? SchoolId { get; set; }
         public string TehsilId { get; set; }
+        public int ScreeningTypeId { get; set; }
 
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }

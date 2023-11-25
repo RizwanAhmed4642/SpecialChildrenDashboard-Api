@@ -10,6 +10,9 @@ namespace SpecialChildrenDashboard_Api.BAL.ViewModel
     {
         public int SchoolId { get; set; }
         public string locationId { get; set; }
-
+        public string Param { get; set; }
+        public int ScreeningTypeId { get; set; }
+        public string DateFrom { get; set; }
+        public string DateTo { get; set; }
     }
 }

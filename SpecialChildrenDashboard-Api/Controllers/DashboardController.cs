@@ -13,9 +13,11 @@ namespace SpecialChildrenDashboard_Api.Controllers
     public class DashboardController : ControllerBase
     {
         private readonly ICounterDashboard dashboardService;
+     
         public DashboardController(ICounterDashboard dashboardService)
         {
             this.dashboardService = dashboardService;
+       ;
         }
 
 
@@ -38,6 +40,14 @@ namespace SpecialChildrenDashboard_Api.Controllers
         public List<View_StudentRegistration> GetStudentList(StudentDto model)
         {
             var res = dashboardService.GetStudentList(model);
+
+            return res;
+        }
+        [Route("GetStudentScreeningReport")]
+        [HttpPost]
+        public List<StudentScreeningDto> GetStudentScreeningReport(DashboardDetailDto model)
+        {
+            var res = dashboardService.GetStudentScreeningReport(model);
 
             return res;
         }

@@ -44,6 +44,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
         public virtual DbSet<HospitalType> HospitalTypes { get; set; }
         public virtual DbSet<Immunization> Immunizations { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<MissingTokenCounter> MissingTokenCounters { get; set; }
         public virtual DbSet<OphthalmologistDoc2> OphthalmologistDoc2s { get; set; }
         public virtual DbSet<PatientFollowUp> PatientFollowUps { get; set; }
         public virtual DbSet<PatientRegistration> PatientRegistrations { get; set; }
@@ -53,9 +54,20 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
         public virtual DbSet<PhysiotherapistDoc7> PhysiotherapistDoc7s { get; set; }
         public virtual DbSet<PsychologistDoc5> PsychologistDoc5s { get; set; }
         public virtual DbSet<School> Schools { get; set; }
+        public virtual DbSet<ScreeningType> ScreeningTypes { get; set; }
         public virtual DbSet<Serological> Serologicals { get; set; }
         public virtual DbSet<SpeechTherapistDoc6> SpeechTherapistDoc6s { get; set; }
+        public virtual DbSet<V_DentalDiseasesReport> V_DentalDiseasesReports { get; set; }
+        public virtual DbSet<V_ENTDiseasesReport> V_ENTDiseasesReports { get; set; }
+        public virtual DbSet<V_MentalDiseasesReport> V_MentalDiseasesReports { get; set; }
+        public virtual DbSet<V_OphthalmologistDiseasesReport> V_OphthalmologistDiseasesReports { get; set; }
+        public virtual DbSet<V_OphthalmologistDivicesReport> V_OphthalmologistDivicesReports { get; set; }
+        public virtual DbSet<V_PhysicalDevicesReport> V_PhysicalDevicesReports { get; set; }
+        public virtual DbSet<V_PhysicalDiseasesReport> V_PhysicalDiseasesReports { get; set; }
+        public virtual DbSet<V_SpeechDiseasesReport> V_SpeechDiseasesReports { get; set; }
+        public virtual DbSet<V_TodayRegisterAndScreening> V_TodayRegisterAndScreenings { get; set; }
         public virtual DbSet<View_Lahore_chauburji_10_March_18_Screenings_SC> View_Lahore_chauburji_10_March_18_Screenings_SCs { get; set; }
+        public virtual DbSet<View_MissingTokenCount> View_MissingTokenCounts { get; set; }
         public virtual DbSet<View_MoreThan_18_March_18_Screenings_SC> View_MoreThan_18_March_18_Screenings_SCs { get; set; }
         public virtual DbSet<View_SpecialChild_TehsilUserList> View_SpecialChild_TehsilUserLists { get; set; }
         public virtual DbSet<View_StudentRegistration> View_StudentRegistrations { get; set; }
@@ -576,6 +588,18 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
                 entity.Property(e => e.PKCODE).IsRequired();
             });
 
+            modelBuilder.Entity<MissingTokenCounter>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("MissingTokenCounter");
+
+                entity.Property(e => e.Parameter)
+                    .IsRequired()
+                    .HasMaxLength(27)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<OphthalmologistDoc2>(entity =>
             {
                 entity.ToTable("OphthalmologistDoc2");
@@ -818,6 +842,110 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
                     .HasConstraintName("FK_dbo.SpeechTherapistDoc6_dbo.PatientRegistrations_PatientRegistrationId");
             });
 
+            modelBuilder.Entity<V_DentalDiseasesReport>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_DentalDiseasesReport");
+            });
+
+            modelBuilder.Entity<V_ENTDiseasesReport>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_ENTDiseasesReport");
+            });
+
+            modelBuilder.Entity<V_MentalDiseasesReport>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_MentalDiseasesReport");
+            });
+
+            modelBuilder.Entity<V_OphthalmologistDiseasesReport>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_OphthalmologistDiseasesReport");
+            });
+
+            modelBuilder.Entity<V_OphthalmologistDivicesReport>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_OphthalmologistDivicesReport");
+
+                entity.Property(e => e.Total_Binocular).HasColumnName("Total Binocular");
+
+                entity.Property(e => e.Total_Digital_CCTV).HasColumnName("Total Digital CCTV");
+
+                entity.Property(e => e.Total_Envision___Smart_Readable_Glasses).HasColumnName("Total Envision / Smart Readable Glasses");
+
+                entity.Property(e => e.Total_Filters_Glasses_for_Low_Vision).HasColumnName("Total Filters Glasses for Low Vision");
+
+                entity.Property(e => e.Total_Magnifying_Glasses).HasColumnName("Total Magnifying Glasses");
+
+                entity.Property(e => e.Total_Monocular).HasColumnName("Total Monocular");
+
+                entity.Property(e => e.Total_Reading_stand).HasColumnName("Total Reading stand");
+
+                entity.Property(e => e.Total_Spectacles_Adviced).HasColumnName("Total Spectacles Adviced");
+
+                entity.Property(e => e.Total_Stand_Magnifiers).HasColumnName("Total Stand Magnifiers");
+
+                entity.Property(e => e.Total_Table_Lamps).HasColumnName("Total Table Lamps");
+
+                entity.Property(e => e.Total_Tablets).HasColumnName("Total Tablets");
+
+                entity.Property(e => e.Total_Typoscope).HasColumnName("Total Typoscope");
+
+                entity.Property(e => e.Total_Whitecane_for_Blind).HasColumnName("Total Whitecane for Blind");
+            });
+
+            modelBuilder.Entity<V_PhysicalDevicesReport>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_PhysicalDevicesReport");
+
+                entity.Property(e => e.Total_CP_Chair).HasColumnName("Total CP Chair");
+
+                entity.Property(e => e.Total_Support_Stick___Crutches).HasColumnName("Total Support Stick / Crutches");
+
+                entity.Property(e => e.Total_Walkers).HasColumnName("Total Walkers");
+
+                entity.Property(e => e.Total_Wheelchair_Electric).HasColumnName("Total Wheelchair-Electric");
+
+                entity.Property(e => e.Total_Wheelchair_Manual).HasColumnName("Total Wheelchair-Manual");
+            });
+
+            modelBuilder.Entity<V_PhysicalDiseasesReport>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_PhysicalDiseasesReport");
+            });
+
+            modelBuilder.Entity<V_SpeechDiseasesReport>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_SpeechDiseasesReport");
+            });
+
+            modelBuilder.Entity<V_TodayRegisterAndScreening>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("V_TodayRegisterAndScreening");
+
+                entity.Property(e => e.Parameter)
+                    .IsRequired()
+                    .HasMaxLength(27)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<View_Lahore_chauburji_10_March_18_Screenings_SC>(entity =>
             {
                 entity.HasNoKey();
@@ -829,6 +957,13 @@ namespace SpecialChildrenDashboard_Api.DAL.Context
                 entity.Property(e => e.PatientRegistrations_UniqueId).HasMaxLength(500);
 
                 entity.Property(e => e.Sr__No_).HasColumnName("Sr. No.");
+            });
+
+            modelBuilder.Entity<View_MissingTokenCount>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("View_MissingTokenCount");
             });
 
             modelBuilder.Entity<View_MoreThan_18_March_18_Screenings_SC>(entity =>

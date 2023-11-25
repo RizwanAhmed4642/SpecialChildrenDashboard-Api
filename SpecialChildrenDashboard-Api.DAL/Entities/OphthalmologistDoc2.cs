@@ -71,6 +71,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string Tablets { get; set; }
         public string Envision { get; set; }
         public string SpectaclesAdviced { get; set; }
+        public int ScreeningTypeId { get; set; }
 
         public virtual PatientRegistration PatientRegistration { get; set; }
     }

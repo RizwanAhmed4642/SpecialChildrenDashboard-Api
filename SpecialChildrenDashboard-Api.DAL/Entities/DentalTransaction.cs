@@ -29,6 +29,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string ReferredTo { get; set; }
         public string DentalExamination { get; set; }
         public string ProcedureAdvised { get; set; }
+        public int ScreeningTypeId { get; set; }
 
         public virtual PatientRegistration PatientRegistration { get; set; }
     }

@@ -13,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using SpecialChildrenDashboard_Api.BAL.Interface;
 using SpecialChildrenDashboard_Api.BAL.Service;
 using SpecialChildrenDashboard_Api.DAL.Context;
+using SpecialChildrenDashboard_Api.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,10 @@ namespace SpecialChildrenDashboard_Api
 
             
             services.AddTransient<ICounterDashboard, CounterDashboard>();
-        
+            services.AddTransient<IMissingToken, MissingTokenService>();
+            services.AddTransient<IDiseases, DiseasesService>();
+            services.AddTransient<IDevices, DeviceService>();
+            services.AddTransient<IEventService, EventService>();
 
 
 
@@ -98,7 +102,7 @@ namespace SpecialChildrenDashboard_Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HF Roster  v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Special Children Dashboard  v1"));
             }
             //app.UseStaticFiles();
             //app.UseStaticFiles(new StaticFileOptions()

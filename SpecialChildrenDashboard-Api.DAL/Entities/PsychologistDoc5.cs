@@ -32,6 +32,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string PsychologicalAssessment { get; set; }
         public string ProvisionalDiagnosis { get; set; }
         public string InterventionsRequired { get; set; }
+        public int ScreeningTypeId { get; set; }
 
         public virtual PatientRegistration PatientRegistration { get; set; }
     }

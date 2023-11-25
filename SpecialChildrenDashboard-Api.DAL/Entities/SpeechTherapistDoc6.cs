@@ -41,6 +41,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string FamilyHistryDisability { get; set; }
         public string ConsanguineousMarriage { get; set; }
         public string DevelopmentMileStone { get; set; }
+        public int ScreeningTypeId { get; set; }
 
         public virtual PatientRegistration PatientRegistration { get; set; }
     }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Authentication;
 using SpecialChildrenDashboard_Api.DAL.Context;
+using SpecialChildrenDashboard_Api.BAL.Interface;
 
 namespace SpecialChildrenDashboard_Api.Controllers
 {
@@ -17,9 +18,11 @@ namespace SpecialChildrenDashboard_Api.Controllers
     public class RootController : Controller
     {
         private readonly SpecialChildrenContext db;
-        public RootController(SpecialChildrenContext context)
+        private readonly IEventService eventService;
+        public RootController(SpecialChildrenContext context,  IEventService eventService)
         {
             db = context;
+            this.eventService = eventService;
         }
 
 
@@ -48,6 +51,13 @@ namespace SpecialChildrenDashboard_Api.Controllers
         public IActionResult GetSchools(string code)
         {
             var res = db.Schools.Where(x => x.TehsilId.StartsWith(code)).ToList();
+            return Ok(res);
+        }
+        [HttpGet]
+        [Route("GetEvents")]
+        public async Task<IActionResult> GetEvents()
+        {
+            var res = eventService.EventList();
             return Ok(res);
         }
 

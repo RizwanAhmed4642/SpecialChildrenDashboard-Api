@@ -14,6 +14,7 @@ namespace SpecialChildrenDashboard_Api.BAL.Interface
         public DashboardCounter GetCounterDashboard(DashboardDto model);
         public List<DashboardDetailCount> GetDashboardDetailCount(DashboardDetailDto model);
         public List<View_StudentRegistration> GetStudentList(StudentDto model);
+        public List<StudentScreeningDto> GetStudentScreeningReport(DashboardDetailDto model);
 
     }
 

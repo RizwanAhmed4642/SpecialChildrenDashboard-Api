@@ -43,6 +43,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string AssistiveListeningDevice { get; set; }
         public string Medication { get; set; }
         public string tympanometryValue { get; set; }
+        public int ScreeningTypeId { get; set; }
 
         public virtual PatientRegistration PatientRegistration { get; set; }
     }

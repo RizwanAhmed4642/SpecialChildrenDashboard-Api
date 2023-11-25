@@ -8,6 +8,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
     public partial class AllRecord
     {
         public long? Sr__No_ { get; set; }
+        public long Id { get; set; }
         public long PatientRegistrations_TokenNo { get; set; }
         public string PatientRegistrations_UniqueId { get; set; }
         public DateTime PatientRegistrations_Regdate { get; set; }

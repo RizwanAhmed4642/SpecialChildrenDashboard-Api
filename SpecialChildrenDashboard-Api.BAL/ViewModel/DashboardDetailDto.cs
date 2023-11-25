@@ -11,5 +11,6 @@ namespace SpecialChildrenDashboard_Api.BAL.ViewModel
         public string DateFrom { get; set; }
         public string DateTo { get; set; }
         public string Location { get; set; }
+        public int ScreeningTypeId { get; set; }
     }
 }

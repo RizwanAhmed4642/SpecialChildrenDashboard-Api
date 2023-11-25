@@ -56,6 +56,7 @@ namespace SpecialChildrenDashboard_Api.DAL.Entities
         public string ContactNo { get; set; }
         public string SchoolId { get; set; }
         public string BForm { get; set; }
+        public int ScreeningTypeId { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual Designation Designation { get; set; }

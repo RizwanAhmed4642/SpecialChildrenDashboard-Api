@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpecialChildrenDashboard_Api.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace SpecialChildrenDashboard_Api.BAL.Interface
 {
     public interface IEventService
     {
+        public List<ScreeningType> EventList();
     }
 }
