@@ -17,7 +17,7 @@ namespace SpecialChildrenDashboard_Api.Controllers
         public DashboardController(ICounterDashboard dashboardService)
         {
             this.dashboardService = dashboardService;
-       ;
+       
         }
 
 

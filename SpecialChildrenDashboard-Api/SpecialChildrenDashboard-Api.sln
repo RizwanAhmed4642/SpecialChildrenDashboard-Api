@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32922.545
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecialChildrenDashboard-Api", "SpecialChildrenDashboard-Api.csproj", "{938A24FC-0C2D-42B0-BD14-78D072C6B50A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecialChildrenDashboard-Api", "SpecialChildrenDashboard-Api.csproj", "{938A24FC-0C2D-42B0-BD14-78D072C6B50A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecialChildrenDashboard-Api.BAL", "..\SpecialChildrenDashboard-Api.BAL\SpecialChildrenDashboard-Api.BAL.csproj", "{A434650A-F876-4BC8-8A6A-BECC2C1C27F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecialChildrenDashboard-Api.BAL", "..\SpecialChildrenDashboard-Api.BAL\SpecialChildrenDashboard-Api.BAL.csproj", "{A434650A-F876-4BC8-8A6A-BECC2C1C27F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecialChildrenDashboard-Api.DAL", "..\SpecialChildrenDashboard-Api.DAL\SpecialChildrenDashboard-Api.DAL.csproj", "{60F20523-8DF7-4103-97CA-93FEF4A7BDD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecialChildrenDashboard-Api.DAL", "..\SpecialChildrenDashboard-Api.DAL\SpecialChildrenDashboard-Api.DAL.csproj", "{60F20523-8DF7-4103-97CA-93FEF4A7BDD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -26,5 +26,13 @@ namespace SpecialChildrenDashboard_Api.BAL.ViewModel
         public int? TotalPsoriasis { get; set; }
         public int? TotalScabies { get; set; }
         public int? TotalXerosis { get; set; }
+        public int? TotalHerpesandViralinfection { get; set; }
+        public int? TotalCellulitis { get; set; }
+        public int? TotalDiaperRash { get; set; }
+        public int? TotalWarts { get; set; }
+        public int? TotalKeloidcars { get; set; }
+        public int? TotalChickenpox { get; set; }
+        public int? TotalMeasles { get; set; }
+     
     }
 }

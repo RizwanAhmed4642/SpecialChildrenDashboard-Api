@@ -12,6 +12,7 @@ namespace SpecialChildrenDashboard_Api.BAL.ViewModel
         public string DistrictName { get; set; }
         public string SchoolName { get; set; }
         public int? TotalJawDeformity { get; set; }
+        public int? TotalCaries { get; set; }
         public int? TotalToothache { get; set; }
         public int? TotalGingivitis { get; set; }
         public int? TotalPeriodontitis { get; set; }
@@ -29,6 +30,7 @@ namespace SpecialChildrenDashboard_Api.BAL.ViewModel
         public int? TotalAttrition { get; set; }
         public int? TotalErosion { get; set; }
         public int? TotalAbrasion { get; set; }
+        public int? TotalDentalSensitivity { get; set; }
         public int? TotalTongueTie { get; set; }
         public int? TotalMacroglossia { get; set; }
     }

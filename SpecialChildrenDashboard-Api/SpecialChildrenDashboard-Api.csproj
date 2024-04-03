@@ -2,7 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>SpecialChildrenDashboard_Api</RootNamespace>
+    <RootNamespace>SpecialChildrenDashboard-Api</RootNamespace>
+    <PackageProjectUrl>https://localhost:50145</PackageProjectUrl>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
